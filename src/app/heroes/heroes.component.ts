@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HEROES } from '../mock-heroes';
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-heroes',
@@ -8,4 +9,9 @@ import { HEROES } from '../mock-heroes';
 })
 export class HeroesComponent {
   heroes = HEROES;
+  selectedHero?: Hero;
+
+  handleSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
 }
